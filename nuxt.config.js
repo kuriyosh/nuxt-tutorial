@@ -27,7 +27,8 @@ export default {
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/firebase"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -36,5 +37,19 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  srcDir: "src"
+  srcDir: "src",
+
+  firebase: {
+    config: {
+      apiKey: process.env.NUXT_ENV_FIREBASE_API_KEY,
+      authDomain: process.env.NUXT_ENV_FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.NUXT_ENV_FIREBASE_PROJECT_ID,
+      storageBucket: process.env.NUXT_ENV_FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.NUXT_ENV_FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.NUXT_ENV_FIREBASE_APP_ID,
+    },
+    services: {
+      auth: true
+    }
+  }
 };
