@@ -26,7 +26,8 @@
     "types": [
       "@nuxt/types",
       "@types/node",
-      "buefy/types"
+      "buefy/types",
+      "@nuxtjs/firebase",
     ]
   },
   "exclude": [
