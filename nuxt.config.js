@@ -32,9 +32,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    'nuxt-buefy'
-  ],
+  modules: ["nuxt-buefy"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -48,10 +46,22 @@ export default {
       projectId: process.env.NUXT_ENV_FIREBASE_PROJECT_ID,
       storageBucket: process.env.NUXT_ENV_FIREBASE_STORAGE_BUCKET,
       messagingSenderId: process.env.NUXT_ENV_FIREBASE_MESSAGING_SENDER_ID,
-      appId: process.env.NUXT_ENV_FIREBASE_APP_ID,
+      appId: process.env.NUXT_ENV_FIREBASE_APP_ID
     },
     services: {
-      auth: true
+      auth: {
+        persistence: "local",
+        ssr: true,
+        initialize: {
+          onAuthStateChangedMutation: "ON_AUTH_STATE_CHANGED_MUTATION"
+        }
+      }
     }
+  },
+
+  workbox: {
+    importScripts: ["/firebase-auth-sw.js"],
+
+    dev: process.env.NODE_ENV == "development"
   }
 };
