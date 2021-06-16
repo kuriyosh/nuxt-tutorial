@@ -32,7 +32,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-buefy"],
+  modules: ["nuxt-buefy", "@nuxtjs/pwa"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -59,9 +59,11 @@ export default {
     }
   },
 
-  workbox: {
-    importScripts: ["/firebase-auth-sw.js"],
+  pwa: {
+    workbox: {
+      importScripts: ["/firebase-auth-sw.js"],
 
-    dev: process.env.NODE_ENV == "development"
+      dev: process.env.NODE_ENV == "development"
+    }
   }
 };
