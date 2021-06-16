@@ -1,4 +1,4 @@
-export const store = () => ({
+export const state = () => ({
   loginedUser: null
 });
 
