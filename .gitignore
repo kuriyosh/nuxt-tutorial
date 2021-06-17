@@ -93,3 +93,9 @@ sw.*
 firebase-auth-sw.js
 firebase-messaging-sw.js
 sw.js
+
+# type file
+graphql.ts
+
+# temp
+codegen.yml

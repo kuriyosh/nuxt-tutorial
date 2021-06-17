@@ -32,7 +32,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-buefy", "@nuxtjs/pwa"],
+  modules: ["nuxt-buefy", "@nuxtjs/pwa", "@nuxtjs/apollo"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -64,6 +64,14 @@ export default {
       importScripts: ["/firebase-auth-sw.js"],
 
       dev: process.env.NODE_ENV == "development"
+    }
+  },
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.NUXT_ENV_GRAPHCMS_ENDPOINT
+      }
     }
   }
 };
