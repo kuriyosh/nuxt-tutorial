@@ -12,7 +12,6 @@ export default Vue.extend({
   middleware: "auth",
   async created() {
     const datas = await this.$apollo.query({ query: ALL_SAMPLE_DATA });
-    console.log(datas);
   },
 });
 </script>
