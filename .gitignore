@@ -99,3 +99,6 @@ graphql.ts
 
 # temp
 codegen.yml
+
+# editor
+.vscode
