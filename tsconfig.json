@@ -14,7 +14,7 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "~/*": [
         "./*"
@@ -28,6 +28,7 @@
       "@types/node",
       "buefy/types",
       "@nuxtjs/firebase",
+      "vue-apollo",
     ]
   },
   "exclude": [
